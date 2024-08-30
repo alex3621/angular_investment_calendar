@@ -1,1 +1,22 @@
-<p>investment-results works!</p>
+<table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Value at Year End</th>
+        <th>Interest (Year)</th>
+        <th>Total Interest</th>
+        <th>Invested Capital</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (year of result; track year.year) {
+        <tr>
+          <td>{{ year.year }}</td>
+          <td>{{ year.valueEndOfYear | number:'1.2-2' }}</td>
+          <td>{{ year.interest | number:'1.2-2' }}</td>
+          <td>{{ year.totalInterest | number:'1.2-2' }}</td>
+          <td>{{ year.totalAmountInvested | number:'1.2-2' }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from './user-input/user-input.component';
 import { InvestmentResultsComponent } from './investment-results/investment-results.component';
 import { UserEntry } from './user-input/user-input.model';
 
-interface YearlyData {
+export interface YearlyData {
   year: number;
   interest: number;
   valueEndOfYear: number;
@@ -20,7 +20,7 @@ interface YearlyData {
   imports:[HeaderComponent, UserInputComponent, InvestmentResultsComponent]
 })
 export class AppComponent {
-  private result: YearlyData[] = [];
+  result: YearlyData[] = [];
   calculated=false;
   submitted(data : UserEntry)
   {
