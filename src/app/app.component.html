@@ -1,7 +1,14 @@
 <div>
     <app-header/>
-    <app-user-input/>
-    <app-investment-results/>
+    <app-user-input (data)="submitted($event)"/>
+    @if (calculated){
+        @for (year of result; track result.year)
+        {
+            <app-investment-results [year]="year"/>
+        }
+
+    }
+
 </div>
 
 
